@@ -2302,3 +2302,34 @@ body.mobile-menu-open {
 .social-links a:hover::before {
     width: 70%;
 }
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 243, 255, 0.1);
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 50%;
+  color: var(--primary-cyan);
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  background: rgba(0, 243, 255, 0.2);
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+  transform: translateY(-5px);
+}

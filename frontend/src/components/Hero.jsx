@@ -12,9 +12,9 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="#" className="btn-primary">
+          {/* <a href="#top" className="btn-primary">
             Initialize System
-          </a>
+          </a> */}
 
           {/* Open Portfolio App */}
           <a
