@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd frontend && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && cd ../portfolio && npm install && DISABLE_ESLINT_PLUGIN=true npm run build && mkdir -p frontend/build/portfolio && cp -r portfolio/build/* frontend/build/portfolio/",
+  "buildCommand": "echo 'Testing portfolio build...' && cd portfolio && echo 'Installing...' && npm install && echo 'Building...' && DISABLE_ESLINT_PLUGIN=true npm run build && echo 'Build completed'",
   "outputDirectory": "frontend/build",
   "installCommand": "npm install --legacy-peer-deps"
 }
