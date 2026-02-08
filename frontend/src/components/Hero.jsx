@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 export default function Hero() {
   return (
     <section className="hero" id="top">
@@ -14,14 +12,13 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <a href="#" className="btn-primary">Initialize System</a>
-          {/* <Link to="/documentation" className="btn-secondary">
-            View Documentation
-          </Link> */}
-          <a 
-            href="http://localhost:3001" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <a href="#" className="btn-primary">
+            Initialize System
+          </a>
+
+          {/* Open Portfolio App */}
+          <a
+            href="/portfolio"
             className="btn btn-secondary"
           >
             View Portfolio

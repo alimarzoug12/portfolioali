@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/build",
+  "routes": [
+    {
+      "src": "/portfolio/(.*)",
+      "dest": "/portfolio/index.html"
+    }
+  ]
+}
