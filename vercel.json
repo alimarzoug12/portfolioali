@@ -1,5 +1,5 @@
 {
-  "buildCommand": "rm -rf node_modules && cd frontend && npm install && npm run build && cd ../portfolio && npm install && npm run build && cd .. && node copy.js",
+  "buildCommand": "cd frontend && npm ci --legacy-peer-deps && DISABLE_ESLINT_PLUGIN=true npm run build && cd ../portfolio && npm ci --legacy-peer-deps && DISABLE_ESLINT_PLUGIN=true npm run build && cd .. && node copy.js",
   "outputDirectory": "frontend/build",
-  "installCommand": "echo 'No root install needed'"
+  "installCommand": "echo 'Installation handled in build command'"
 }
