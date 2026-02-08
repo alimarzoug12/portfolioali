@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm start --prefix frontend\" \"npm start --prefix portfolio\"",
-    "build": "npm run build --prefix frontend && npm run build --prefix portfolio && cp -r portfolio/build frontend/build/portfolio"
+    "build": "cd frontend && npm run build && cd ../portfolio && npm run build && cd .. && cp -r portfolio/build frontend/build/portfolio"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
