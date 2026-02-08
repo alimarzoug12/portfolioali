@@ -2,10 +2,13 @@
   "name": "portfolioali",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm start --prefix frontend\" \"npm start --prefix portfolio\"",
-    "build": "cd frontend && npm run build && cd ../portfolio && npm run build && cd .. && cp -r portfolio/build frontend/build/portfolio"
+    "build": "npm run build:frontend && npm run build:portfolio && node copy.js",
+    "build:frontend": "cd frontend && npm run build",
+    "build:portfolio": "cd portfolio && npm run build",
+    "dev": "concurrently \"npm start --prefix frontend\" \"npm start --prefix portfolio\""
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "fs-extra": "^11.1.1"
   }
 }
