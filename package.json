@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "build": "npm run build:frontend && npm run build:portfolio && npm run copy",
-    "build:frontend": "cd frontend && npm run build",
-    "build:portfolio": "cd portfolio && CI=false DISABLE_ESLINT_PLUGIN=true npm run build",
+    "build:frontend": "cd frontend && ../node_modules/.bin/react-scripts build",
+    "build:portfolio": "cd portfolio && ../node_modules/.bin/react-scripts build",
     "copy": "mkdir -p frontend/build/portfolio && cp -r portfolio/build/* frontend/build/portfolio/",
     "clean": "rm -rf frontend/build portfolio/build"
   },
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "react-scripts": "5.0.1"
+  }
 }
