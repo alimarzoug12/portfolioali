@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd frontend && npm install && npm run build && cd ../portfolio && npm install && npm run build && cd .. && cp -r portfolio/build frontend/build/portfolio",
   "outputDirectory": "frontend/build",
+  "installCommand": "cd frontend && npm install",
   "routes": [
     {
       "src": "/portfolio/(.*)",
