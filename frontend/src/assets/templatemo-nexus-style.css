@@ -1384,7 +1384,13 @@ https://templatemo.com/tm-594-nexus-flow
                 var(--primary-cyan),
                 var(--primary-purple)
             );
+            left: 30px;
         }
+        @media (min-width: 768px) {
+            .timeline::before {
+                left: 150px; /* Back to 150px on desktop */
+            }
+        }       
 
         .timeline-item {
             position: relative;
@@ -1393,13 +1399,18 @@ https://templatemo.com/tm-594-nexus-flow
 
         .timeline-dot {
             position: absolute;
-            left: 140px;
+            left: 23px;
             top: 8px;
             width: 14px;
             height: 14px;
             border-radius: 50%;
             background: var(--primary-cyan);
-            box-shadow: 0 0 12px var(--primary-cyan);
+            box-shadow: 0 0 12px var(--primary-cyan);            
+        }
+        @media (min-width: 768px) {
+            .timeline-dot {
+                left: 140px; /* Back to 140px on desktop */
+            }
         }
 
         .timeline-header {
@@ -1455,7 +1466,7 @@ https://templatemo.com/tm-594-nexus-flow
 
         .timeline-content {
             padding: 22px 26px;
-            margin-left: 40px;
+            margin-left: 50px;
 
             border: 1px solid rgba(0, 255, 255, 0.35);
             border-radius: 16px;
@@ -1464,6 +1475,11 @@ https://templatemo.com/tm-594-nexus-flow
             box-shadow:
                 0 0 20px rgba(0, 255, 255, 0.08),
                 inset 0 0 12px rgba(0, 255, 255, 0.05);
+        }
+        @media (min-width: 768px) {
+            .timeline-content {
+                margin-left: 40px; /* Back to 40px on desktop */
+            }
         }
 
         .experience-content {
@@ -2249,4 +2265,40 @@ body.mobile-menu-open {
 /* Prevent body scroll when mobile menu is open */
 body.mobile-menu-open {
   overflow: hidden;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* ONLY social links get cyan hover effect */
+.social-links a:hover {
+    color: var(--primary-cyan);
+    text-shadow: 0 0 10px var(--primary-cyan);
+}
+
+/* Animated underline for social links only */
+.social-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;    
+    transition: width 0.3s ease;
+}
+
+.social-links a:hover::before {
+    width: 70%;
 }
