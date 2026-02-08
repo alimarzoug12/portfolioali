@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm start --prefix frontend\" \"npm start --prefix portfolio\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "react-icons": "^5.5.0"
+  }
+}
