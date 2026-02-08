@@ -159,9 +159,9 @@ https://templatemo.com/tm-594-nexus-flow
                 
                 // Generate random characters for the column
                 let text = '';
-                const charCount = Math.floor(Math.random() * 20 + 10);
+                const charCount = Math.floor(Math.random() * 10 + 6);
                 for (let j = 0; j < charCount; j++) {
-                    text += characters[Math.floor(Math.random() * characters.length)] + ' ';
+                    text += characters[Math.floor(Math.random() * characters.length)];
                 }
                 column.textContent = text;
                 
