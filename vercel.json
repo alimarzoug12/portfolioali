@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "chmod +x deploy.sh && ./deploy.sh",
   "outputDirectory": "frontend/build",
   "installCommand": "npm install --legacy-peer-deps"
 }
