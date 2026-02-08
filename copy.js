@@ -1,26 +1,54 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
-try {
-  console.log('📁 Copying portfolio to frontend...');
+console.log('📁 Starting copy process...');
+
+const source = path.join(__dirname, 'portfolio/build');
+const destination = path.join(__dirname, 'frontend/build/portfolio');
+
+console.log(`Source: ${source}`);
+console.log(`Destination: ${destination}`);
+
+// Check if source exists
+if (!fs.existsSync(source)) {
+  console.error('❌ Error: Portfolio build not found at:', source);
+  console.log('Please build portfolio first: cd portfolio && npm run build');
+  process.exit(1);
+}
+
+// Create destination directory
+if (!fs.existsSync(path.dirname(destination))) {
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+}
+
+// Remove existing destination
+if (fs.existsSync(destination)) {
+  fs.rmSync(destination, { recursive: true, force: true });
+}
+
+// Copy function
+function copyRecursive(src, dest) {
+  const entries = fs.readdirSync(src, { withFileTypes: true });
   
-  const source = path.join(__dirname, 'portfolio/build');
-  const destination = path.join(__dirname, 'frontend/build/portfolio');
-  
-  // Remove destination if exists
-  if (fs.existsSync(destination)) {
-    fs.rmSync(destination, { recursive: true, force: true });
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    
+    if (entry.isDirectory()) {
+      fs.mkdirSync(destPath, { recursive: true });
+      copyRecursive(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
   }
-  
-  // Create destination directory
+}
+
+// Perform copy
+try {
   fs.mkdirSync(destination, { recursive: true });
-  
-  // Copy files
-  execSync(`cp -r "${source}/"* "${destination}/"`);
-  
+  copyRecursive(source, destination);
   console.log('✅ Portfolio copied successfully!');
 } catch (error) {
-  console.error('❌ Error:', error.message);
+  console.error('❌ Error copying files:', error.message);
   process.exit(1);
 }
