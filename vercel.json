@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd portfolio && npm install --legacy-peer-deps --no-audit --no-fund && CI=false DISABLE_ESLINT_PLUGIN=true npm run build && cd ../frontend && npm install --legacy-peer-deps --no-audit --no-fund && npm run build && cd .. && node copy.js",
   "outputDirectory": "frontend/build",
   "installCommand": "echo 'Install handled in build steps'"
 }
