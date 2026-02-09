@@ -5,9 +5,8 @@
   "scripts": {
     "build": "echo 'Root build script - use build-all instead' && exit 1",
     "build-all": "npm run build:portfolio && npm run build:frontend && npm run copy:portfolio",
-    "build:portfolio": "cd portfolio && npm install --legacy-peer-deps --no-audit --no-fund && (cd .. && npm run check-build)",
-    "check-build": "cd portfolio && CI=false DISABLE_ESLINT_PLUGIN=true npm run build",
-    "build:frontend": "cd frontend && npm install --legacy-peer-deps --no-audit --no-fund && npm run build",
+    "build:portfolio": "cd portfolio && npm install --legacy-peer-deps --no-audit --no-fund && CI=false DISABLE_ESLINT_PLUGIN=true node -e \"process.chdir('portfolio'); require('./node_modules/.bin/react-scripts');\" build",
+    "build:frontend": "cd frontend && npm install --legacy-peer-deps --no-audit --no-fund && node -e \"process.chdir('frontend'); require('./node_modules/.bin/react-scripts');\" build",
     "copy:portfolio": "node copy.js"
   }
 }
