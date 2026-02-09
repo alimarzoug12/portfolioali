@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build:all",
+  "buildCommand": "npm run build-all",
   "outputDirectory": "frontend/build",
   "installCommand": "echo 'Install handled in build steps'"
 }
