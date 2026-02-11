@@ -1325,3 +1325,66 @@ section,
   background: rgba(13, 110, 253, 0.15);
   font-weight: 600;
 }
+/* ===== RESPONSIVE CONTACT FORM ===== */
+.contact-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-submit {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Mobile specific contact form */
+@media (max-width: 991px) {
+  .contact-card {
+    padding: 15px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .btn-submit {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
