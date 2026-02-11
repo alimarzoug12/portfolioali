@@ -1,18 +1,18 @@
-import React from 'react';
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import Home from './pages/Home';       // your default home (the simple one)
+import Home1 from './pages/Home1';     // the portfolio-style home (from template)
 
-export default function App() {
+function App() {
   return (
-    <div style={{
-      backgroundColor: 'lime',
-      color: 'black',
-      fontSize: '80px',
-      fontWeight: 'bold',
-      textAlign: 'center',
-      padding: '200px 20px',
-      minHeight: '100vh',
-      border: '10px solid red'
-    }}>
-      PORTFOLIO LOADED - TEST SUCCESS
-    </div>
+    // <Router>
+    //   <Routes>
+    //     {/* <Route path="/" element={<Home />} /> */}
+    //     <Route path="/" element={<Home1 />} />
+    //   </Routes>
+    // </Router>
+    <Home1 />
   );
 }
+
+export default App;

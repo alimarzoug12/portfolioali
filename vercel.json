@@ -1,17 +1,11 @@
 {
-  "cleanUrls": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "npm install --prefix frontend && npm install --prefix portfolio",
   "rewrites": [
-    {
-      "source": "/portfolio",
-      "destination": "/portfolio/index.html"
-    },
     {
       "source": "/portfolio/:path*",
       "destination": "/portfolio/index.html"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/index.html"
     }
   ]
 }
