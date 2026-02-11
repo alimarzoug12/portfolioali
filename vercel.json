@@ -1,5 +1,11 @@
 {
-  "buildCommand": "chmod +x build.sh && ./build.sh",
+  "buildCommand": "npm run build",
   "outputDirectory": "frontend/build",
-  "installCommand": "echo 'No root install needed'"
+  "installCommand": "npm install --prefix frontend && npm install --prefix portfolio",
+  "rewrites": [
+    {
+      "source": "/portfolio/:path*",
+      "destination": "/portfolio/index.html"
+    }
+  ]
 }

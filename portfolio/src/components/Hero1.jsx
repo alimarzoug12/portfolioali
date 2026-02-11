@@ -30,7 +30,7 @@ const Hero1 = ({ toggleMobileMenu }) => {
 
   return (
     <section id="hero" className="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" className="" />
+      <img src="/portfolio/assets/img/hero-bg.jpg" alt="" data-aos="fade-in" className="" />
       
       {/* Three Lines Button - Only on mobile */}
       {isMobile && (

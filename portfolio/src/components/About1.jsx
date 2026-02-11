@@ -18,7 +18,7 @@ const About1 = () => {
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <div className="row gy-4 justify-content-center">
           <div className="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" className="img-fluid" alt="" />
+            <img src="/portfolio/assets/img/my-profile-img.jpg" className="img-fluid" alt="" />
           </div>
           <div className="col-lg-8 content">
             <h2>Data Science Engineering Student.</h2>

@@ -5,12 +5,13 @@ import Home1 from './pages/Home1';     // the portfolio-style home (from templat
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<Home1 />} />
-      </Routes>
-    </Router>
+    // <Router>
+    //   <Routes>
+    //     {/* <Route path="/" element={<Home />} /> */}
+    //     <Route path="/" element={<Home1 />} />
+    //   </Routes>
+    // </Router>
+    <Home1 />
   );
 }
 

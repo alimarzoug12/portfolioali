@@ -69,20 +69,20 @@ const Header1 = ({ isMobileMenuOpen, toggleMobileMenu }) => {
     <>
       {/* Desktop Sidebar */}
       <header id="header" className="header dark-background d-flex flex-column">
-        <Link to="/" className="profile-img-link">
+        <a to="/" className="profile-img-link">
           <div className="profile-img">
             <img
-              src="assets/img/my-profile-img.jpg"
+              src="/portfolio/assets/img/my-profile-img.jpg"
               alt="Ali Marzoug"
               className="img-fluid rounded-circle"
               style={{ width: "120px", height: "120px", objectFit: "cover" }}
             />
           </div>
-        </Link>
+        </a>
 
-        <Link to="/" className="logo d-flex align-items-center justify-content-center">
+        <a to="/" className="logo d-flex align-items-center justify-content-center">
           <h1 className="sitename">Ali Marzoug</h1>
-        </Link>
+        </a>
         <div className="social-links text-center">
           <a href="https://x.com/AliMarzoug12" className="twitter"><i className="bi bi-twitter-x"></i></a>
           <a href="https://www.facebook.com/ali.marzoug.14" className="facebook"><i className="bi bi-facebook"></i></a>
