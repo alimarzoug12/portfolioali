@@ -1,25 +1,33 @@
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   const formRef = useRef();
+  const [status, setStatus] = useState("idle"); 
+  // idle | sending | sent | error
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_xgtl531",
-      "template_lzs4shq",
-      formRef.current,
-      "yABYDI74hgGKfGNMn"
-    )
-    .then(() => {
-      alert("Message transmitted successfully 🚀");
-      formRef.current.reset();
-    })
-    .catch(() => {
-      alert("Transmission failed ❌ Try again.");
-    });
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        "service_xgtl531",
+        "template_lzs4shq",
+        formRef.current,
+        "yABYDI74hgGKfGNMn"
+      )
+      .then(() => {
+        setStatus("sent");
+        formRef.current.reset();
+
+        // Optional: reset button after few seconds
+        setTimeout(() => setStatus("idle"), 3000);
+      })
+      .catch(() => {
+        setStatus("error");
+      });
   };
 
   return (
@@ -67,9 +75,21 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary btn-submit">
-                Transmit Message
+              <button
+                type="submit"
+                className="btn-primary btn-submit"
+                disabled={status === "sending"}
+              >
+                {status === "idle" && "Transmit Message"}
+                {status === "sending" && "Sending…"}
+                {status === "sent" && "Message Sent ✓"}
+                {status === "error" && "Failed — Try Again"}
               </button>
+              
+
+              {status === "error" && (
+                <p className="form-error">Transmission failed. Please retry.</p>
+              )}
 
             </form>
 

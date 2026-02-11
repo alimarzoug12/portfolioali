@@ -1,25 +1,20 @@
-echo "=== Copying portfolio build ==="
+echo "Copying portfolio build to frontend/build/portfolio..."
 
-# Clean everything
+# 1. Clean previous copy
 rm -rf ../frontend/build/portfolio 2>/dev/null || true
 
-# Create the folder
+# 2. Create the folder
 mkdir -p ../frontend/build/portfolio
 
-# Copy the contents (not the 'build' folder itself)
-cp -a -v portfolio/build/. ../frontend/build/portfolio/
+# 3. Copy the ENTIRE contents of portfolio/build into frontend/build/portfolio
+#    Use -a to preserve permissions, -v for verbose (visible in logs)
+cp -av portfolio/build/. ../frontend/build/portfolio/
 
-# Debug - show what Vercel really has
-echo "=== Source portfolio/build contents ==="
-ls -la portfolio/build
-
-echo "=== Copied to frontend/build/portfolio ==="
+# 4. Debug - show what was copied (will appear in Vercel build logs)
+echo "=== Files copied to portfolio folder ==="
 ls -la ../frontend/build/portfolio
 
-echo "=== Checking static/js ==="
-ls -la ../frontend/build/portfolio/static/js 2>/dev/null || echo "!!! static/js MISSING !!!"
-
-echo "=== Checking static/css ==="
-ls -la ../frontend/build/portfolio/static/css 2>/dev/null || echo "!!! static/css MISSING !!!"
+echo "=== Static folder contents ==="
+ls -la ../frontend/build/portfolio/static 2>/dev/null || echo "Static folder missing!"
 
 echo "Build complete!"
