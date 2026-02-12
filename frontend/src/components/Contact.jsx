@@ -84,7 +84,8 @@ export default function Contact() {
                 {status === "sending" && "Sending…"}
                 {status === "sent" && "Message Sent ✓"}
                 {status === "error" && "Failed — Try Again"}
-              </button>              
+              </button>
+              
 
               {status === "error" && (
                 <p className="form-error">Transmission failed. Please retry.</p>
